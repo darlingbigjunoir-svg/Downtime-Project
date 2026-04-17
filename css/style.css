@@ -1,0 +1,384 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #eef2f7;
+      font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      padding: 24px 20px;
+      color: #1a2c3e;
+    }
+
+    /* Main app container */
+    .app-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.12);
+      overflow: hidden;
+    }
+
+    /* Header area */
+    .app-header {
+      background: #0a2b3e;
+      padding: 18px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 16px;
+      border-bottom: 1px solid #1e4a6b;
+    }
+
+    .title-section h1 {
+      color: white;
+      font-weight: 600;
+      font-size: 1.8rem;
+      letter-spacing: -0.3px;
+    }
+
+    .title-section p {
+      color: #9bbdd4;
+      font-size: 0.85rem;
+      margin-top: 6px;
+    }
+
+    .badge-daily {
+      background: #2c6e9e;
+      padding: 8px 18px;
+      border-radius: 60px;
+      color: white;
+      font-weight: 500;
+      font-size: 0.8rem;
+    }
+
+    /* Tabs */
+    .tabs-nav {
+      display: flex;
+      gap: 4px;
+      background: #f1f5f9;
+      padding: 12px 28px 0 28px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      padding: 12px 28px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #3a5a78;
+      cursor: pointer;
+      border-radius: 40px 40px 0 0;
+      transition: 0.2s;
+    }
+
+    .tab-btn:hover {
+      background: #e6edf4;
+      color: #0f3b5c;
+    }
+
+    .tab-btn.active {
+      background: white;
+      color: #0a5c8e;
+      border-bottom: 3px solid #0a5c8e;
+    }
+
+    /* Panel content */
+    .panel {
+      display: none;
+      padding: 28px 32px;
+      background: white;
+      animation: fade 0.2s ease;
+    }
+
+    .panel.active-panel {
+      display: block;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(6px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+
+    /* Form card */
+    .form-card {
+      background: #ffffff;
+      border-radius: 24px;
+      border: 1px solid #e9edf2;
+      padding: 24px 28px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .form-grid.two-cols {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .full-width {
+      grid-column: span 3;
+    }
+
+    label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #5f7f9e;
+      letter-spacing: 0.4px;
+    }
+
+    input, select, textarea {
+      border: 1px solid #cfdfed;
+      border-radius: 14px;
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      font-family: inherit;
+      background: white;
+      transition: 0.2s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #2c6e9e;
+      box-shadow: 0 0 0 3px rgba(44,110,158,0.1);
+    }
+
+    input[readonly] {
+      background: #f4f9fe;
+      font-weight: 500;
+      color: #1f5e8e;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 70px;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: flex-end;
+      gap: 14px;
+      margin-top: 28px;
+      border-top: 1px solid #ecf3f8;
+      padding-top: 24px;
+    }
+
+    .btn {
+      padding: 9px 24px;
+      border-radius: 40px;
+      border: 1px solid #cbdde9;
+      background: white;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: #0a5c8e;
+      border-color: #0a5c8e;
+      color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .btn-primary:hover {
+      background: #07416a;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline:hover {
+      background: #f0f4f9;
+    }
+
+    /* filter bar */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      background: #f9fbfe;
+      padding: 12px 20px;
+      border-radius: 60px;
+      margin-bottom: 28px;
+      border: 1px solid #e2eaf1;
+    }
+
+    .filter-bar input, .filter-bar select {
+      flex: 1;
+      min-width: 150px;
+    }
+
+    .print-btn {
+      background: #2c5a7a;
+      color: white;
+      border: none;
+    }
+
+    /* Table styles */
+    .table-wrapper {
+      overflow-x: auto;
+      border-radius: 20px;
+      border: 1px solid #eef2f8;
+      background: white;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    th {
+      text-align: left;
+      padding: 14px 12px;
+      background: #f2f6fb;
+      color: #1c4e72;
+      font-weight: 600;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    td {
+      padding: 12px;
+      border-bottom: 1px solid #f0f4fa;
+      vertical-align: top;
+    }
+
+    .badge-sys {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    .badge-engine { background: #fee2e2; color: #b91c1c; }
+    .badge-hydraulic { background: #e0f2fe; color: #0369a1; }
+    .badge-electrical { background: #fff3e3; color: #b45309; }
+    .badge-tyres { background: #e3f5e9; color: #2b6e3c; }
+    .badge-transmission { background: #eae8ff; color: #4c38b0; }
+    .badge-brakes { background: #ffe4ed; color: #be185d; }
+    .badge-other { background: #eef2f8; color: #5b6e8c; }
+
+    .delete-btn {
+      background: none;
+      border: 1px solid #e0e7ef;
+      padding: 5px 12px;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      cursor: pointer;
+      color: #b91c1c;
+    }
+
+    .delete-btn:hover {
+      background: #fee2e2;
+      border-color: #f3bcbc;
+    }
+
+    .total-footer {
+      background: #fafdff;
+      font-weight: 600;
+      border-top: 1px solid #dee6ef;
+    }
+
+    /* summary cards */
+    .stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+    .stat-card {
+      background: white;
+      border-radius: 28px;
+      padding: 20px 18px;
+      flex: 1;
+      min-width: 140px;
+      border: 1px solid #e2ecf5;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #0f5b87;
+    }
+    .stat-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: #6c8eae;
+      letter-spacing: 0.5px;
+    }
+
+    .sys-bar-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .sys-name {
+      width: 110px;
+      font-weight: 600;
+    }
+    .bar-track {
+      flex: 2;
+      background: #e4ebf2;
+      border-radius: 20px;
+      height: 10px;
+    }
+    .bar-fill {
+      height: 10px;
+      border-radius: 20px;
+      background: #2c6e9e;
+      width: 0%;
+    }
+    .machine-rank-table {
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    /* print styles */
+    @media print {
+      .no-print, .tabs-nav, .filter-bar, .btn-group, .delete-btn, .print-btn {
+        display: none !important;
+      }
+      body { background: white; padding: 0; }
+      .app-container { box-shadow: none; border-radius: 0; }
+      .panel { display: block !important; padding: 0.2in; }
+      .panel.active-panel { display: block; }
+      .print-header { display: block; text-align: center; margin-bottom: 20px; }
+      table { border: 1px solid #aaa; }
+      th, td { border: 1px solid #ccc; }
+    }
+    .print-header { display: none; }
+    @media print { .print-header { display: block; } }
+
+    /* responsive */
+    @media (max-width: 750px) {
+      .form-grid, .form-grid.two-cols {
+        grid-template-columns: 1fr;
+      }
+      .full-width {
+        grid-column: span 1;
+      }
+      .panel {
+        padding: 20px 16px;
+      }
+    }
+  
